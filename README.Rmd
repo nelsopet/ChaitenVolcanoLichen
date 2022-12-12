@@ -1,0 +1,16 @@
+---
+title: "Chaiten Volcano Lichen"
+output: github_document
+keep_md: true
+
+---
+# ChaitenVolcanoLichen
+Data and analyses of lichen community composition after the eruption of Volcan Chaiten
+
+Low resolution version of poster presented at AGU in 2017.
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = FALSE)
+require(tidyverse)
+knitr::include_graphics(path="ChaitenVolcanoLichen/Media/Lichen_Volcano_Resilience_lowres.jpg")
+
+```

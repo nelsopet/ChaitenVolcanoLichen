@@ -1,0 +1,406 @@
+
+R version 2.10.1 (2009-12-14)
+Copyright (C) 2009 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.31 (5537) x86_64-apple-darwin9.8.0]
+
+[Workspace restored from /Users/peternelson/.RData]
+
+> library(ggplot2)
+Loading required package: proto
+Loading required package: grid
+Loading required package: reshape
+Loading required package: plyr
+Loading required package: digest
+> lch<-read.csv(file="/Users/peternelson/Documents/Personal_Lichenology/Chile Doc's/Chile_Trip_2012/Data/ChileLichenVolcanoPlots/ChaitenLichenDisturbDivers_toR.csv", header=TRUE); attache(lch);
+Error: could not find function "attache"
+
+> lch<-read.csv(file="/Users/peternelson/Documents/Personal_Lichenology/Chile Doc's/Chile_Trip_2012/Data/ChileLichenVolcanoPlots/ChaitenLichenDisturbDivers_toR.csv", header=TRUE); attache(lch);
+> attach(lch)
+> colnames(lch)
+ [1] "Name"      "Distcode"  "velocity"  "particle"  "volume"    "DISTIND"   "DISTIND2"  "AlphDiv"   "SpEveness" "ShanDiv"   "SimpDiv"   "CyanDiv"  
+[13] "CyanProp" 
+> Distcode<-as.factor(Distcode);DISTIND<-as.factor(DISTIND);DISTIND2<-as.factor(DISTIND2)
+> boxplot(AlphaDiv~Distcode)
+Error in eval(expr, envir, enclos) : object 'AlphaDiv' not found
+> boxplot(AlphDiv~Distcode)
+> boxplot(AlphDiv~Distcode)
+> xlab(Name)
+$x
+ [1] AMARI_P  AMARI_T  BLST2_P  BLST2_T  MICH1_T  MICH2_P  REFUP_P  REFLOW_T RYASBR_P RYASBR_T RYASLW_P RYASLW_T RYASUP_P RYASUP_T SCORCH_P STPHRA_T
+Levels: AMARI_P AMARI_T BLST2_P BLST2_T MICH1_T MICH2_P REFLOW_T REFUP_P RYASBR_P RYASBR_T RYASLW_P RYASLW_T RYASUP_P RYASUP_T SCORCH_P STPHRA_T
+
+attr(,"class")
+[1] "labels"
+> distname<-c("Blast, Deep Tephra, Flood, Gravel Rain, Gravel+Pumice, Reference, Scorch, Shallow Tephra")
+> boxplot(AlphDiv~Distcode, ylab=distname)
+> boxplot(AlphDiv~Distcode, xlab=distname)
+> distname<-c("Blast", "Deep Tephra", "Flood", "Gravel Rain", "Gravel+Pumice", "Reference", "Scorch", "Shallow Tephra")
+> boxplot(AlphDiv~Distcode, xlab=distname)
+> boxplot(AlphDiv~Distcode, xlab=distname)
+
+> boxplot(AlphDiv~Distcode, xlab=distname)
+> help(axis)
+starting httpd help server ... done
+> boxplot(AlphDiv~Distcode)
+> axis(side=1, labels=distname)
+Error in axis(side = 1, labels = distname) : 
+  'labels' is supplied and not 'at'
+> axis(side=1, 1:8, labels=distname)
+
+> boxplot(AlphDiv~Distcode)
+> plot(1:4, rnorm(4), axes = FALSE)
+> axis(1, 1:4, LETTERS[1:4])
+> axis(side=1, 1:8, distname)
+Error in axis(side = 1, 1:8, distname) : plot.new has not been called yet
+> boxplot(AlphDiv~Distcode)
+> axis(side=1, 1:8, distname)
+> distname
+[1] "Blast"          "Deep Tephra"    "Flood"          "Gravel Rain"    "Gravel+Pumice"  "Reference"      "Scorch"         "Shallow Tephra"
+> nrow(distname)
+NULL
+> class(distname)
+[1] "character"
+> length(distname)
+[1] 8
+> boxplot(AlphDiv~Distcode)
+> axis(side=1, 1:8, distname, padj=2)
+> axis(side=1, 1:8, distname, padj=1)
+> axis(side=1, 1:8, distname, padj=3)
+> axis(side=1, 1:8, distname, padj=4)
+> distname<-c("Blast","Deep Tephra","Flood","Gravel Rain","Gravel+Pumice","Reference","Scorch","Shallow Tephra")
+> boxplot(AlphDiv~Distcode)
+> axis(side=1, 1:8, distname, padj=3)
+> help(text)
+> boxplot(AlphDiv~Distcode)
+> help(text)
+> axis(side=1, 1:8, distname, padj=3)
+
+> text()hel
+> help(par)
+> par(las-1)
+Error in par(las - 1) : object 'las' not found
+> par(las=1)
+> par(las=2)
+> ## Increase bottom margin to make room for rotated labels
+>      par(mar = c(7, 4, 4, 2) + 0.1)
+>      ## Create plot with no x axis and no x axis label
+>      plot(1 : 8, xaxt = "n",  xlab = "")
+>      ## Set up x axis with tick marks alone
+>      axis(1, labels = FALSE)
+>      ## Create some text labels
+>      labels <- paste("Label", 1:8, sep = " ")
+>      ## Plot x axis labels at default tick marks
+>      text(1:8, par("usr")[3] - 0.25, srt = 45, adj = 1,
++           labels = labels, xpd = TRUE)
+>      ## Plot x axis label at line 6 (of 7)
+>      mtext(1, text = "X Axis Label", line = 6)
+> 
+> boxplot(AlphDiv~Distcode)
+> text(1:8, par(srt=90), adj=1, labels=distname)
+> axis(side=1, 1:8, distname, padj=2)
+> par(adj=1, srt=90)
+> help(mtext)
+> > ## Increase bottom margin to make room for rotated labels
+Error: unexpected '>' in ">"
+> >      par(mar = c(7, 4, 4, 2) + 0.1)
+Error: unexpected '>' in ">"
+> >      ## Create plot with no x axis and no x axis label
+Error: unexpected '>' in ">"
+> >      plot(1 : 8, xaxt = "n",  xlab = "")
+Error: unexpected '>' in ">"
+> >      ## Set up x axis with tick marks alone
+Error: unexpected '>' in ">"
+> >      axis(1, labels = FALSE)
+Error: unexpected '>' in ">"
+> >      ## Create some text labels
+Error: unexpected '>' in ">"
+> >      labels <- paste("Label", 1:8, sep = " ")
+Error: unexpected '>' in ">"
+> >      ## Plot x axis labels at default tick marks
+Error: unexpected '>' in ">"
+> >      text(1:8, par("usr")[3] - 0.25, srt = 45, adj = 1,
+Error: unexpected '>' in ">"
+> +           labels = labels, xpd = TRUE)
+Error: unexpected ',' in "+           labels = labels,"
+> >      ## Plot x axis label at line 6 (of 7)
+Error: unexpected '>' in ">"
+> >      mtext(1, text = "X Axis Label", line = 6)
+Error: unexpected '>' in ">"
+>      ## Increase bottom margin to make room for rotated labels
+>      par(mar = c(7, 4, 4, 2) + 0.1)
+>      ## Create plot with no x axis and no x axis label
+>      plot(1 : 8, xaxt = "n",  xlab = "")
+>      ## Set up x axis with tick marks alone
+>      axis(1, labels = FALSE)
+>      ## Create some text labels
+>      labels <- paste("Label", 1:8, sep = " ")
+>      ## Plot x axis labels at default tick marks
+>      text(1:8, par("usr")[3] - 0.25, srt = 45, adj = 1,
++           labels = labels, xpd = TRUE)
+>      ## Plot x axis label at line 6 (of 7)
+>      mtext(1, text = "X Axis Label", line = 6)
+> boxplot(AlphDiv~Distcode)
+> axis(1, labels=FALSE)
+> text(1:8, srt=90, adj=1, labes=distname)
+Warning message:
+In text.default(1:8, srt = 90, adj = 1, labes = distname) :
+  "labes" is not a graphical parameter
+> text(1:8, srt=90, adj=1, labels=distname)
+> text(1:8, srt=90, adj=1, labels=distname, xpd=TRUE)
+Warning message:
+"labes" is not a graphical parameter 
+> text(1:8, srt=90, par("usr")[3] - 0.25, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode)
+> text(1:8, srt=90, par("usr")[3] - 0.25, adj=1, labels=distname, xpd=TRUE)
+
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode)
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode, xlab="")
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="")
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="")
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> ylab="Number of species"
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="")
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE, ylab="Number of Species")
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="")
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> axis(2, ylab="Number of Species")
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="", ylab="Number of Lichen Species")
+> text(1:8, srt=90, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="", ylab="Number of Lichen Species")
+> help(boxplot)
+> text(1:8, srt=90, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="", ylab="Number of Lichen Species")
+> text(1:8, srt=45, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="", ylab="Number of Lichen Species")
+> colnames(lch)
+ [1] "Name"      "Distcode"  "velocity"  "particle"  "volume"    "DISTIND"   "DISTIND2"  "AlphDiv"   "SpEveness" "ShanDiv"   "SimpDiv"   "CyanDiv"  
+[13] "CyanProp" 
+> boxplot(AlphDiv~CyanProp, xaxt="n", xlab="", ylab="Number of Lichen Species")
+> boxplot(CyanProp~Distcode, xaxt="n", xlab="", ylab="Number of Lichen Species")
+
+> text(1:8, srt=45, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="", ylab="Proportion Cyanolichens")
+> boxplot(AlphDiv~Distcode, xaxt="n", xlab="", ylab="Percent Cyanolichens")
+> text(1:8, srt=45, par("usr")[3] - 1, adj=1, labels=distname, xpd=TRUE)
+> boxplot(DISTIND~Distcode, xaxt="n", xlab="", ylab="Percent Cyanolichens")
+Error in oldClass(stats) <- cl : 
+  adding class "factor" to an invalid object
+> DISTIND<-as.numeric(DISTIND)
+> boxplot(DISTIND~Distcode, xaxt="n", xlab="", ylab="Percent Cyanolichens")
+> DISTIND<-as.factor(DISTIND)
+
+> boxplot(AlphaDiv~DISTIND, xlab="Disturbance Index", ylab="Number of Lichen Species")
+> gt<-matrix(nrow=3, ncol=2)
+> gt
+     [,1] [,2]
+[1,]   NA   NA
+[2,]   NA   NA
+[3,]   NA   NA
+> gt<-matrix(nrow=6, ncol=3)
+> gt[1,]<-c("Plot",1:3)
+Error in gt[1, ] <- c("Plot", 1:3) : 
+  number of items to replace is not a multiple of replacement length
+> gt[1,]<-c("Plot",1:2)
+> gt
+     [,1]   [,2] [,3]
+[1,] "Plot" "1"  "2" 
+[2,] NA     NA   NA  
+[3,] NA     NA   NA  
+[4,] NA     NA   NA  
+[5,] NA     NA   NA  
+[6,] NA     NA   NA  
+> gt[1,]<-c("Plot"+1:2)
+Error in "Plot" + 1:2 : non-numeric argument to binary operator
+> gt[1,]<-c("Plot"|1:2)
+Error in "Plot" | 1:2 : 
+  operations are possible only for numeric, logical or complex types
+> gt<-matrix(nrow=6, ncol=3)
+> gt
+     [,1] [,2] [,3]
+[1,]   NA   NA   NA
+[2,]   NA   NA   NA
+[3,]   NA   NA   NA
+[4,]   NA   NA   NA
+[5,]   NA   NA   NA
+[6,]   NA   NA   NA
+> gt[,1]<-c("Plot1", "Plot1", "Plot2", "Plot2", "Plot3", "Plot3")
+> gt
+     [,1]    [,2] [,3]
+[1,] "Plot1" NA   NA  
+[2,] "Plot1" NA   NA  
+[3,] "Plot2" NA   NA  
+[4,] "Plot2" NA   NA  
+[5,] "Plot3" NA   NA  
+[6,] "Plot3" NA   NA  
+> gt[,2]<-rnorm(6)
+> gt
+     [,1]    [,2]                 [,3]
+[1,] "Plot1" "-0.384623213100246" NA  
+[2,] "Plot1" "0.236816253848196"  NA  
+[3,] "Plot2" "-0.74396624099484"  NA  
+[4,] "Plot2" "1.00768750801902"   NA  
+[5,] "Plot3" "2.96468264053689"   NA  
+[6,] "Plot3" "-1.20000906393671"  NA  
+> gt[,3]<-0
+> gt
+     [,1]    [,2]                 [,3]
+[1,] "Plot1" "-0.384623213100246" "0" 
+[2,] "Plot1" "0.236816253848196"  "0" 
+[3,] "Plot2" "-0.74396624099484"  "0" 
+[4,] "Plot2" "1.00768750801902"   "0" 
+[5,] "Plot3" "2.96468264053689"   "0" 
+[6,] "Plot3" "-1.20000906393671"  "0" 
+> gt[3,3]<-/
+Error: unexpected '/' in "gt[3,3]<-/"
+> gt[3,3]<-"/"
+> gt
+     [,1]    [,2]                 [,3]
+[1,] "Plot1" "-0.384623213100246" "0" 
+[2,] "Plot1" "0.236816253848196"  "0" 
+[3,] "Plot2" "-0.74396624099484"  "/" 
+[4,] "Plot2" "1.00768750801902"   "0" 
+[5,] "Plot3" "2.96468264053689"   "0" 
+[6,] "Plot3" "-1.20000906393671"  "0" 
+> gt[3,3]<-0
+> gt[3,2]<-""
+> gt[3,2]<-"/"
+
+> gt[3,2]<-"/"
+> gt
+     [,1]    [,2]                 [,3]
+[1,] "Plot1" "-0.384623213100246" "0" 
+[2,] "Plot1" "0.236816253848196"  "0" 
+[3,] "Plot2" "/"                  "0" 
+[4,] "Plot2" "1.00768750801902"   "0" 
+[5,] "Plot3" "2.96468264053689"   "0" 
+[6,] "Plot3" "-1.20000906393671"  "0" 
+> gt[,2]<-rnorm(6, mean=300, sd=20)
+> gt
+     [,1]    [,2]               [,3]
+[1,] "Plot1" "311.747039635661" "0" 
+[2,] "Plot1" "282.799082913902" "0" 
+[3,] "Plot2" "290.731559736934" "0" 
+[4,] "Plot2" "300.334930144409" "0" 
+[5,] "Plot3" "302.84882826907"  "0" 
+[6,] "Plot3" "319.901762273512" "0" 
+> gt[2,3]<-"/"
+> gt[4,3]<-"/"
+> gt[6,3]<-"/"
+> gt
+     [,1]    [,2]               [,3]
+[1,] "Plot1" "311.747039635661" "0" 
+[2,] "Plot1" "282.799082913902" "/" 
+[3,] "Plot2" "290.731559736934" "0" 
+[4,] "Plot2" "300.334930144409" "/" 
+[5,] "Plot3" "302.84882826907"  "0" 
+[6,] "Plot3" "319.901762273512" "/" 
+> help(row)
+> row(gt)
+     [,1] [,2] [,3]
+[1,]    1    1    1
+[2,]    2    2    2
+[3,]    3    3    3
+[4,]    4    4    4
+[5,]    5    5    5
+[6,]    6    6    6
+> gt[,4]<-cat(gt[,1],row(gt))
+Plot1 Plot1 Plot2 Plot2 Plot3 Plot3 1 2 3 4 5 6 1 2 3 4 5 6 1 2 3 4 5 6Error in gt[, 4] <- cat(gt[, 1], row(gt)) : subscript out of bounds
+> gt[,4]<-c(gt[,1],row(gt))
+Error in gt[, 4] <- c(gt[, 1], row(gt)) : subscript out of bounds
+> gt
+     [,1]    [,2]               [,3]
+[1,] "Plot1" "311.747039635661" "0" 
+[2,] "Plot1" "282.799082913902" "/" 
+[3,] "Plot2" "290.731559736934" "0" 
+[4,] "Plot2" "300.334930144409" "/" 
+[5,] "Plot3" "302.84882826907"  "0" 
+[6,] "Plot3" "319.901762273512" "/" 
+> c(gt[,1])
+[1] "Plot1" "Plot1" "Plot2" "Plot2" "Plot3" "Plot3"
+> plots<-c(gt[,1])
+> for(i in plot){if gt[,1]=i print(1) print(0)}
+Error: unexpected symbol in "for(i in plot){if gt"
+> for(i in plot){if (gt[,1]=i) print(1) print(0)}
+Error: unexpected '=' in "for(i in plot){if (gt[,1]="
+
+> for(i in plot){if (gt[,1]=i) print(1) print(0)}
+> for(i in plot){if gt[,1]==i print(1) print(0)}
+Error: unexpected symbol in "for(i in plot){if gt"
+> for(i in plot){if (gt[,1]==i) print(1) print(0)}
+Error: unexpected symbol in "for(i in plot){if (gt[,1]==i) print(1) print"
+> for(i in length(plot)){if (gt[,1]==i) print(1) print(0)}
+Error: unexpected symbol in "for(i in length(plot)){if (gt[,1]==i) print(1) print"
+> for(i in length(plot)){if (gt[,1]==i) print(1) print(0);}
+Error: unexpected symbol in "for(i in length(plot)){if (gt[,1]==i) print(1) print"
+> for(i in length(plot)){if (gt[,1]==i) print(1) else print(0);}
+[1] 0
+Warning message:
+In if (gt[, 1] == i) print(1) else print(0) :
+  the condition has length > 1 and only the first element will be used
+> for(i in plot){if (gt[,1]==i) print(1) else print(0);}
+Error: invalid type/length (closure/1) in vector allocation
+> for(i in length(plot)){if (gt[,1]==i) print(1) else print(0);}
+[1] 0
+Warning message:
+In if (gt[, 1] == i) print(1) else print(0) :
+  the condition has length > 1 and only the first element will be used
+> for(i in nrow(gt)){if (gt[,3]=="/") print(1) else print(0);}
+[1] 0
+Warning message:
+In if (gt[, 3] == "/") print(1) else print(0) :
+  the condition has length > 1 and only the first element will be used
+> for(i in nrow(gt)){if (gt[,3]="/") print(1) else print(0);}
+Error: unexpected '=' in "for(i in nrow(gt)){if (gt[,3]="
+
+> 
+> colnames(lch)
+ [1] "Name"      "Distcode"  "velocity"  "particle"  "volume"    "DISTIND"   "DISTIND2"  "AlphDiv"   "SpEveness" "ShanDiv"   "SimpDiv"   "CyanDiv"  
+[13] "CyanProp" 
+> boxplot(AlphaDiv~DISTIND, xlab="Disturbance Index", ylab="Number of Lichen Species")
+Error in eval(expr, envir, enclos) : object 'AlphaDiv' not found
+> boxplot(AlphDiv~DISTIND, xlab="Disturbance Index", ylab="Number of Lichen Species")
+> boxplot(AlphDiv~DISTIND2, xlab="Disturbance Index", ylab="Number of Lichen Species")
+> DISTIND
+ [1] 2 2 5 5 3 3 1 1 4 4 4 4 4 4 4 2
+Levels: 1 2 3 4 5
+> Distcode
+ [1] 2 2 1 1 4 4 6 6 5 5 3 3 3 3 7 8
+Levels: 1 2 3 4 5 6 7 8
+> DISTIND2
+ [1] 1 1 3 3 2 2 1 1 2 2 2 2 2 2 2 1
+Levels: 1 2 3
+> lch[,1]
+ [1] AMARI_P  AMARI_T  BLST2_P  BLST2_T  MICH1_T  MICH2_P  REFUP_P  REFLOW_T RYASBR_P RYASBR_T RYASLW_P RYASLW_T RYASUP_P RYASUP_T SCORCH_P STPHRA_T
+Levels: AMARI_P AMARI_T BLST2_P BLST2_T MICH1_T MICH2_P REFLOW_T REFUP_P RYASBR_P RYASBR_T RYASLW_P RYASLW_T RYASUP_P RYASUP_T SCORCH_P STPHRA_T
+> distindRAW<-c(3,3,9,9,5,5,0,0,6,6,6,6,6,6,6,3)
+> ncol(lch)
+[1] 13
+> lch[,14]<-disindRAW
+Error: object 'disindRAW' not found
+> lch[,14]<-distindRAW
+
+> boxplot(AlphDiv~DISTIND2, xlab="Disturbance Index", ylab="Number of Lichen Species")
+> distindRAW<-as.factor(distindRAW)
+> boxplot(AlphDiv~lch[,14], xlab="Disturbance Index", ylab="Number of Lichen Species")
+> boxplot(AlphDiv~lch[,14], xlab="Disturbance Index", ylab="Number of Lichen Species")
+> 

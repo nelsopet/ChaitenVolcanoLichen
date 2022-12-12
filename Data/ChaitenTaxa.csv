@@ -1,0 +1,12 @@
+Taxon,Genus,Species,Name,Type,Fixer
+a,Sticta,caulescens,Sti_cau,lichen,primary
+b,Hymenophyllum,sp,Hym_,fern,no
+c,Hymenoglossum,cruentum,Hym_cru,fern,no
+d,Cora,bovei,Cor_bov,lichen,primary
+e,Pseudocyphellaria,berberina,Pse_ber,lichen,secondary
+f,Luzuriaga,radicans,Luz_rad,angio,no
+g,Pseudocyphellaria,divulsa,Pse_div,lichen,secondary
+h,Sticta,sp,,lichen,primary
+i,Pseudocyphellaria,,Pse_,lichen,primary
+j,Philesia,magellanica,Phi_mag,angio,no
+k,Pseudocyphellaria,meyenii,Pse_mey,lichen,primary
